@@ -1,9 +1,10 @@
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 
 public class FileReaderNumbers {
-    public static int [] numbers;
-    public static void readFile() {
+    public static int [] arr;
+    public static int[] readFile() {
 
         File file = new File("numbers/array");
         try {
@@ -12,9 +13,7 @@ public class FileReaderNumbers {
             while (bufferedReader.readLine() != null){
                 size++;
             }
-
-            int []arr = new int[size];
-
+            arr = new int[size];
 
             bufferedReader = new BufferedReader(new FileReader(file));
             String line;
@@ -31,6 +30,7 @@ public class FileReaderNumbers {
         }catch (Exception ex){
             ex.printStackTrace();
         }
+        return arr;
     }
 
 
